@@ -1,13 +1,21 @@
-﻿public abstract class Paiement
+﻿using System;
+
+namespace AppPaiements
 {
-    public double montant { get; set; }
-    public string description { get; set; }
-
-    public Paiement(double m, string d)
+    // Classe abstraite Paiement
+    public abstract class Paiement
     {
-        montant = m;
-        description = d;
-    }
+        public double montant { get; set; }
+        public string description { get; set; }
 
-    public abstract void AfficherDetails();
+        // Constructeur de la classe Paiement
+        public Paiement(double m, string d)
+        {
+            montant = m;
+            description = d;
+        }
+
+        // Méthode abstraite pour afficher les détails
+        public abstract void AfficherDetails();
+    }
 }
