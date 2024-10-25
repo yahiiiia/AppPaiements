@@ -1,25 +1,28 @@
 ﻿using AppPaiements;
 
-static void Main(string[] args)
+class Program
 {
-    // On cree un nouvel utilisateur
-    Utilisateur utilisateur = new Utilisateur("Yahia");
+    static void Main(string[] args)
+    {
+        // On crée un nouvel utilisateur
+        Utilisateur utilisateur = new Utilisateur("Abdo");
 
-    // On affiche les infos de l'utilisateur
-    utilisateur.Afficher();
+        // On ajoute des paiements à l'utilisateur
+        CarteCredit paiementCarte = new CarteCredit(200.0, "Achat d'ordinateur", 98765432);
+        Paypal paiementPaypal = new Paypal(100.0, "Achat de logiciels", "abdo@gmail.com");
 
-    // On cree un paiement fictif
-    Paiement paiement1 = new CarteCredit(100.0, "Achat de livre", 12345678);
-    Paiement paiement2 = new Paypal(50.0, "Abonnement streaming", "yahia@gmail.com");
+        // On les ajoute dans la liste de l'utilisateur
+        utilisateur.AjouterPaiement(paiementCarte);
+        utilisateur.AjouterPaiement(paiementPaypal);
 
-    // On ajoute les paiements
-    utilisateur.AjouterPaiement(paiement1);
-    utilisateur.AjouterPaiement(paiement2);
+        // On montre les informations de l'utilisateur
+        utilisateur.Afficher();
 
-    // On affiche les infos de nouveau
-    utilisateur.Afficher();
-
-    // Pour attendre avant de fermer
-    Console.WriteLine("Appuyez sur une touche pour terminer...");
-    Console.ReadKey();
+        // Maintenant, on va montrer les détails de chaque paiement
+        Console.WriteLine("Voici les détails des paiements :");
+        foreach (Paiement paiement in utilisateur.listePaiements)
+        {
+            paiement.AfficherDetails(); // Affiche les infos de chaque paiement
+        }
+    }
 }
