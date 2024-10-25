@@ -1,16 +1,25 @@
-﻿// Mon premier paiement Paypal
-Paypal p1 = new Paypal(75.0, "acheter des chaussures", "yahia@gmail.com");
+﻿using AppPaiements;
 
-// Mon deuxième paiement Paypal
-Paypal p2 = new Paypal(150.0, "abonnement gym", "abderrafia@gmail.com");
+static void Main(string[] args)
+{
+    // On cree un nouvel utilisateur
+    Utilisateur utilisateur = new Utilisateur("Yahia");
 
-// Je montre les paiements
-Console.WriteLine("Voici le premier paiement:");
-p1.AfficherDetails();
+    // On affiche les infos de l'utilisateur
+    utilisateur.Afficher();
 
-Console.WriteLine("Voici le deuxième paiement:");
-p2.AfficherDetails();
+    // On cree un paiement fictif
+    Paiement paiement1 = new CarteCredit(100.0, "Achat de livre", 12345678);
+    Paiement paiement2 = new Paypal(50.0, "Abonnement streaming", "yahia@gmail.com");
 
-// Pour attendre avant de fermer
-Console.WriteLine("Appuyez sur une touche pour terminer...");
-Console.ReadKey();
+    // On ajoute les paiements
+    utilisateur.AjouterPaiement(paiement1);
+    utilisateur.AjouterPaiement(paiement2);
+
+    // On affiche les infos de nouveau
+    utilisateur.Afficher();
+
+    // Pour attendre avant de fermer
+    Console.WriteLine("Appuyez sur une touche pour terminer...");
+    Console.ReadKey();
+}
