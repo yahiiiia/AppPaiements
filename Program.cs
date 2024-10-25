@@ -1,18 +1,16 @@
-﻿using System;
-using AppPaiements;
+﻿// Mon premier paiement Paypal
+Paypal p1 = new Paypal(75.0, "acheter des chaussures", "yahia@gmail.com");
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        // Créer trois instances de CarteCredit
-        CarteCredit achat1 = new CarteCredit(100.0, "Achat de Livres", 12345678);
-        CarteCredit achat2 = new CarteCredit(250.0, "Électronique", 87654321);
-        CarteCredit achat3 = new CarteCredit(50.0, "Abonnement en Ligne", 11223344);
+// Mon deuxième paiement Paypal
+Paypal p2 = new Paypal(150.0, "abonnement gym", "abderrafia@gmail.com");
 
-        // Afficher les détails de chaque paiement
-        achat1.AfficherDetails();
-        achat2.AfficherDetails();
-        achat3.AfficherDetails();
-    }
-}
+// Je montre les paiements
+Console.WriteLine("Voici le premier paiement:");
+p1.AfficherDetails();
+
+Console.WriteLine("Voici le deuxième paiement:");
+p2.AfficherDetails();
+
+// Pour attendre avant de fermer
+Console.WriteLine("Appuyez sur une touche pour terminer...");
+Console.ReadKey();

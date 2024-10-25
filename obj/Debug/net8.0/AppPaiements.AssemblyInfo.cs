@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppPaiements")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+534e46b56416d1cc3cef0e6cb8ab541644dfa9d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c0a7ffa9ac48a7dd1fb62fb579f44adfd26d85c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppPaiements")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppPaiements")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
